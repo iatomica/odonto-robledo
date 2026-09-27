@@ -2,26 +2,39 @@ import React from 'react';
 import { MessageCircle, ShieldCheck, MapPin, ArrowRight, Clock, Star } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 
-
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-start overflow-hidden pt-20 pb-16">
+    <section className="relative min-h-[100dvh] flex items-center justify-start overflow-hidden pt-20 pb-16 bg-[#FAF7F2]">
       
-      {/* FULL BACKGROUND BANNER (Authentic Doctor & Clinic Photo) */}
-      <div className="absolute inset-0 z-0">
+      {/* RIGHT-ALIGNED DOCTOR IMAGE WITH SEAMLESS LEFT BLEND */}
+      <div 
+        className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] xl:w-[58%] z-0 overflow-hidden pointer-events-none"
+        style={{
+          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.85) 45%, black 75%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 15%, rgba(0,0,0,0.85) 45%, black 75%)'
+        }}
+      >
         <img
           src="/images/dra-trinidad-robledo-real.png"
           alt="Dra. Trinidad Robledo en Centro Odontológico Robledo Córdoba"
-          className="w-full h-full object-cover object-[75%_center] sm:object-[center_center] filter brightness-[1.02]"
+          className="w-full h-full object-cover object-[70%_top] sm:object-[center_20%] lg:object-[center_center] filter brightness-[1.01]"
         />
         
-        {/* Editorial warm beige gradient overlay for maximum legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2] via-[#FAF7F2]/90 sm:via-[#FAF7F2]/80 md:via-[#FAF7F2]/70 lg:via-[#FAF7F2]/60 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-transparent to-transparent sm:hidden"></div>
+        {/* Supplementary delicate light overlays to ensure organic blending with background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2] via-[#FAF7F2]/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-transparent to-[#FAF7F2]/30"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-2xl lg:max-w-2xl space-y-6">
+      {/* Mobile/Tablet full background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F2]/95 via-[#FAF7F2]/85 to-[#FAF7F2] lg:hidden z-0 pointer-events-none"></div>
+
+      {/* TOP AND BOTTOM BLENDS INTO NEIGHBORING SECTIONS */}
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FAF7F2] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#FAF7F2]/90 to-transparent z-10 pointer-events-none"></div>
+
+      {/* HERO CONTENT (Left aligned on clean solid beige canvas) */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-xl lg:max-w-2xl space-y-6">
           
           {/* Eyebrow badge */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#E3D5C1] shadow-xs">
@@ -65,24 +78,24 @@ export const Hero: React.FC = () => {
 
           {/* Trust badges & Location row */}
           <div className="pt-6 border-t border-[#DECFC0]/80 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-xs text-[#524436]">
-            <div className="flex items-center gap-2 p-2 rounded-xl bg-white/70 backdrop-blur-sm border border-[#EFE7DA]/80">
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/80 backdrop-blur-sm border border-[#EFE7DA]/90 shadow-2xs">
               <MapPin className="w-4 h-4 text-[#B89368] shrink-0" />
               <span className="font-medium">Rivera Indarte 72 (Of. 319)</span>
             </div>
             
-            <div className="flex items-center gap-2 p-2 rounded-xl bg-white/70 backdrop-blur-sm border border-[#EFE7DA]/80">
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/80 backdrop-blur-sm border border-[#EFE7DA]/90 shadow-2xs">
               <ShieldCheck className="w-4 h-4 text-[#B89368] shrink-0" />
               <span className="font-medium">10+ Obras Sociales</span>
             </div>
 
-            <div className="flex items-center gap-2 p-2 rounded-xl bg-white/70 backdrop-blur-sm border border-[#EFE7DA]/80">
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/80 backdrop-blur-sm border border-[#EFE7DA]/90 shadow-2xs">
               <Clock className="w-4 h-4 text-[#B89368] shrink-0" />
               <span className="font-medium">Turnos sin espera</span>
             </div>
           </div>
 
           {/* Live appointment availability badge */}
-          <div className="inline-flex items-center gap-2.5 p-3 rounded-2xl bg-white/80 backdrop-blur-md border border-[#EAE0D2] shadow-xs">
+          <div className="inline-flex items-center gap-2.5 p-3 rounded-2xl bg-white/85 backdrop-blur-md border border-[#EAE0D2] shadow-xs">
             <div className="flex items-center gap-1 text-[#B89368]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-[#B89368]" />
