@@ -1,304 +1,271 @@
-import { Sparkles, ShieldCheck, HeartHandshake, Zap, ArrowRight, MessageCircle, CheckCircle2 } from 'lucide-react';
-
+import React from 'react';
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 
 export const ServicesSection: React.FC = () => {
   return (
-    <section id="tratamientos" className="py-20 sm:py-24 bg-[#FAF7F2]">
+    <section id="tratamientos" className="py-20 sm:py-24 bg-[#FCFBF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E3D5C1] text-xs font-medium uppercase tracking-wider text-[#7A644D]">
-            <Sparkles className="w-3.5 h-3.5 text-[#B89368]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold uppercase tracking-wider text-[#17386D] shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#0284C7]" />
             <span>Especialidades Odontológicas</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-editorial font-medium text-[#241D17] leading-tight">
-            Servicios integrales diseñados para tu salud y estética bucal
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-editorial font-medium text-[#0A1324] leading-tight">
+            Tratamientos de alta gama adaptados a cada paciente
           </h2>
 
-          <p className="text-sm sm:text-base text-[#615446] font-light leading-relaxed">
-            Agrupamos nuestros tratamientos en áreas clave de atención, combinando diagnóstico preciso, técnicas mínimamente invasivas y materiales de máxima calidad.
+          <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed">
+            Abordaje interdisciplinario en Recoleta: ortodoncia, ortopedia y odontopediatría por la <strong>Dra. Inés Escuder</strong>; rehabilitación oral, implantes y estética por el <strong>Dr. Ray Miranda</strong>.
           </p>
         </div>
 
-        {/* Collage Cards Layout */}
+        {/* Services Grid */}
         <div className="space-y-10">
 
-          {/* ROW 1: Estética (Col 7) + Ortodoncia (Col 5) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            
-            {/* Collage 1: Estética Dental & Sonrisa */}
-            <div className="lg:col-span-7 rounded-3xl bg-white border border-[#E8DEC\-0] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between">
-              
-              <div className="grid grid-cols-1 sm:grid-cols-12 h-full">
-                
-                {/* Photo Column */}
-                <div className="sm:col-span-5 relative min-h-[260px] sm:min-h-full overflow-hidden bg-[#EFE7DA]">
-                  <img
-                    src="/images/estetica-dental-sonrisa.jpg"
-                    alt="Estética dental y diseño de sonrisa Dra Trinidad Robledo"
-                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
-                  />
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-mono tracking-wider uppercase font-semibold text-[#8C6D48] shadow-xs">
-                    Estética Bucal
-                  </div>
-                </div>
-
-                {/* Details Column */}
-                <div className="sm:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-editorial font-medium text-[#241D17] mb-2 leading-tight">
-                      Diseño de Sonrisa & Estética
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#6A5C4E] font-light leading-relaxed mb-5">
-                      Tratamientos personalizados para lograr una sonrisa radiante, natural y en perfecta armonía con tus rasgos faciales.
-                    </p>
-
-                    <div className="space-y-2 mb-6">
-                      <div className="flex items-start gap-2 text-xs text-[#45372B]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B89368] shrink-0 mt-0.5" />
-                        <span><strong>Carillas dentales:</strong> Porcelana ultra fina y resina estratificada.</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs text-[#45372B]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B89368] shrink-0 mt-0.5" />
-                        <span><strong>Blanqueamiento dental clínico:</strong> Aclaramiento sin sensibilidad.</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs text-[#45372B]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B89368] shrink-0 mt-0.5" />
-                        <span><strong>Armonización & contorneado:</strong> Corrección de formas y bordes.</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs text-[#45372B]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B89368] shrink-0 mt-0.5" />
-                        <span><strong>Cierre de diastemas:</strong> Eliminación de separaciones estéticas.</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-[#F2EBE1]">
-                    <a
-                      href={getWhatsAppUrl('Hola Dra. Trinidad Robledo, quisiera consultar sobre un diseño de sonrisa o blanqueamiento dental.')}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2C241E] hover:bg-[#45372B] text-white text-xs font-medium uppercase tracking-wider transition-all shadow-xs active:scale-[0.98]"
-                    >
-                      <MessageCircle className="w-3.5 h-3.5 text-[#D8BC99]" />
-                      <span>Consultar por Estética</span>
-                    </a>
-                  </div>
-                </div>
-
+          {/* AREA 1: ORTODONCIA, ORTOPEDIA & ODONTOPEDIATRÍA (Dra. Inés Escuder) */}
+          <div className="border border-sky-100 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-sky-50/50 via-white to-white shadow-xs">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-sky-100">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#0284C7]" />
+                <h3 className="font-editorial text-2xl text-[#102246] font-semibold">
+                  Ortodoncia, Ortopedia Maxilar &amp; Odontopediatría
+                </h3>
               </div>
-
+              <span className="px-3 py-1 rounded-full bg-sky-100/80 text-[#0284C7] text-xs font-bold uppercase tracking-wider">
+                A cargo de la Dra. Inés Escuder
+              </span>
             </div>
 
-            {/* Collage 2: Ortodoncia Invisible */}
-            <div className="lg:col-span-5 rounded-3xl bg-white border border-[#E8DEC\-0] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
-              <div className="relative h-48 sm:h-56 overflow-hidden bg-[#EFE7DA]">
-                <img
-                  src="/images/ortodoncia-invisible.jpg"
-                  alt="Alineadores invisibles y ortodoncia moderna"
-                  className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-mono tracking-wider uppercase font-semibold text-[#8C6D48] shadow-xs">
-                  Ortodoncia
-                </div>
-              </div>
-
-              <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+              {/* Ortodoncia */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-sky-300 transition-colors">
                 <div>
-                  <h3 className="text-2xl font-editorial font-medium text-[#241D17] mb-2 leading-tight">
-                    Ortodoncia Invisible & Convencional
-                  </h3>
-                  <p className="text-xs text-[#6A5C4E] font-light leading-relaxed mb-4">
-                    Alineá tus dientes con placas transparentes cómodas y removibles, o brackets estéticos de última generación.
+                  <div className="text-xs font-bold text-[#0284C7] uppercase tracking-wider mb-2">Alineación &amp; Oclusión</div>
+                  <h4 className="text-xl font-editorial font-medium text-slate-900 mb-2">Ortodoncia Integral</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-light mb-4">
+                    Corrección de malposiciones dentarias y mordidas. Alineadores transparentes invisibles y brackets estéticos de última generación.
                   </p>
-
-                  <div className="space-y-1.5 mb-6 text-xs text-[#45372B]">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#B89368] shrink-0" />
-                      <span>Alineadores transparentes sin alambres</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#B89368] shrink-0" />
-                      <span>Ortodoncia estética para jóvenes y adultos</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#B89368] shrink-0" />
-                      <span>Corrección de mordida y apiñamiento</span>
-                    </div>
-                  </div>
+                  <ul className="space-y-2 text-xs text-slate-700 mb-6">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Alineadores invisibles y cómodos</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Brackets de zafiro y autoligables</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Planificación digital de movimientos</span>
+                    </li>
+                  </ul>
                 </div>
+                <a
+                  href={getWhatsAppUrl('Hola Dra. Inés Escuder, quisiera consultar por un tratamiento de Ortodoncia / Alineadores.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#17386D] hover:text-[#0284C7] transition-colors"
+                >
+                  <span>Consultar Ortodoncia</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
 
-                <div className="pt-4 border-t border-[#F2EBE1]">
-                  <a
-                    href={getWhatsAppUrl('Hola Dra. Trinidad Robledo, me interesa consultar sobre ortodoncia invisible y alineadores.')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#8C6D48] hover:text-[#5E472D] transition-colors"
-                  >
-                    <span>Evaluar mi alineación dental</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+              {/* Ortopedia */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-sky-300 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-[#0284C7] uppercase tracking-wider mb-2">Crecimiento Óseo</div>
+                  <h4 className="text-xl font-editorial font-medium text-slate-900 mb-2">Ortopedia Maxilar</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-light mb-4">
+                    Guía y estímulo del crecimiento armónico de los huesos maxilares y mandibulares durante la etapa infantil y juvenil.
+                  </p>
+                  <ul className="space-y-2 text-xs text-slate-700 mb-6">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Expansión y remodelación ósea</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Corrección temprana de mordida cruzada</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Prevención de cirugías ortognáticas</span>
+                    </li>
+                  </ul>
                 </div>
+                <a
+                  href={getWhatsAppUrl('Hola Dra. Inés Escuder, quisiera consultar sobre Ortopedia Maxilar infantil.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#17386D] hover:text-[#0284C7] transition-colors"
+                >
+                  <span>Consultar Ortopedia</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+              {/* Odontopediatría */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-sky-300 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-[#0284C7] uppercase tracking-wider mb-2">Atención Infantil</div>
+                  <h4 className="text-xl font-editorial font-medium text-slate-900 mb-2">Odontopediatría</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-light mb-4">
+                    Cuidado dental integral adaptado a niños con paciencia, empatía y técnicas pedagógicas para crear una experiencia positiva.
+                  </p>
+                  <ul className="space-y-2 text-xs text-slate-700 mb-6">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Fluoraciones y selladores protectores</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Manejo empático de miedos infantiles</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+                      <span>Control de hábitos y piezas temporarias</span>
+                    </li>
+                  </ul>
+                </div>
+                <a
+                  href={getWhatsAppUrl('Hola Dra. Inés Escuder, quisiera coordinar un turno de Odontopediatría para mi hijo/a.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#17386D] hover:text-[#0284C7] transition-colors"
+                >
+                  <span>Turno Odontopediatría</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
 
             </div>
-
           </div>
 
-          {/* ROW 2: Odontología Integral (Col 4) + Implantes (Col 4) + Bruxismo & Urgencias (Col 4) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            
-            {/* Collage 3: Integral & Prevención */}
-            <div className="rounded-3xl bg-white border border-[#E8DEC\-0] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between p-6 sm:p-7">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#F7F2EB] flex items-center justify-center text-[#B89368] mb-4">
-                  <HeartHandshake className="w-6 h-6" />
-                </div>
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#8C7A68] mb-1">
-                  Prevención & Cuidado
-                </div>
-                <h3 className="text-xl font-editorial font-medium text-[#241D17] mb-2 leading-tight">
-                  Odontología Integral & Profilaxis
+          {/* AREA 2: REHABILITACIÓN ORAL, IMPLANTES & ESTÉTICA (Dr. Ray Miranda) */}
+          <div className="border border-indigo-100 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-indigo-50/40 via-white to-white shadow-xs">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-indigo-100">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#102246]" />
+                <h3 className="font-editorial text-2xl text-[#102246] font-semibold">
+                  Rehabilitación Oral, Implantes &amp; Estética Dental
                 </h3>
-                <p className="text-xs text-[#6A5C4E] leading-relaxed mb-4">
-                  Tratamientos conservadores para mantener tu boca sana, sin dolor y con cobertura por obras sociales.
-                </p>
-
-                <div className="space-y-2 mb-6 text-xs text-[#524436]">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Limpieza con ultrasonido y pulido coronario</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Restauraciones estéticas en resina sin metal</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Control de encías y salud periodontal</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Odontopediatría amigable y sin miedo</span>
-                  </div>
-                </div>
               </div>
+              <span className="px-3 py-1 rounded-full bg-slate-100 text-[#102246] text-xs font-bold uppercase tracking-wider">
+                A cargo del Dr. Ray Miranda
+              </span>
+            </div>
 
-              <div className="pt-4 border-t border-[#F2EBE1]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              {/* Rehabilitación Oral */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-indigo-300 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-[#17386D] uppercase tracking-wider mb-2">Función &amp; Oclusión</div>
+                  <h4 className="text-xl font-editorial font-medium text-slate-900 mb-2">Rehabilitación Oral</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-light mb-4">
+                    Restauración integral de la masticación y la anatomía dentaria en casos de desgaste severo, bruxismo o pérdidas múltiples.
+                  </p>
+                  <ul className="space-y-2 text-xs text-slate-700 mb-6">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Coronas cerámicas de circonio y disilicato</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Incrustaciones estéticas inlay/onlay</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Restablecimiento de la dimensión vertical</span>
+                    </li>
+                  </ul>
+                </div>
                 <a
-                  href={getWhatsAppUrl('Hola Dra. Trinidad Robledo, quisiera agendar un turno de control y limpieza dental.')}
+                  href={getWhatsAppUrl('Hola Dr. Ray Miranda, quisiera coordinar una consulta de Rehabilitación Oral.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-between text-xs font-semibold text-[#8C6D48] hover:text-[#5E472D]"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#17386D] hover:text-[#0284C7] transition-colors"
                 >
-                  <span>Agendar control general</span>
+                  <span>Consultar Rehabilitación</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-            </div>
 
-            {/* Collage 4: Implantes & Prótesis */}
-            <div className="rounded-3xl bg-white border border-[#E8DEC\-0] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between p-6 sm:p-7">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#F7F2EB] flex items-center justify-center text-[#B89368] mb-4">
-                  <ShieldCheck className="w-6 h-6" />
+              {/* Implantes Dentales */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-indigo-300 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-[#17386D] uppercase tracking-wider mb-2">Implantología Guiada</div>
+                  <h4 className="text-xl font-editorial font-medium text-slate-900 mb-2">Implantes Dentales</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-light mb-4">
+                    Reemplazo permanente de dientes perdidos mediante fijaciones de titanio biocompatible de la más alta graduación médica.
+                  </p>
+                  <ul className="space-y-2 text-xs text-slate-700 mb-6">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Cirugía mínimamente invasiva guiada</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Carga inmediata y prótesis fija</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Regeneración ósea guiada</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#8C7A68] mb-1">
-                  Rehabilitación Oral
-                </div>
-                <h3 className="text-xl font-editorial font-medium text-[#241D17] mb-2 leading-tight">
-                  Implantes & Coronas Dentales
-                </h3>
-                <p className="text-xs text-[#6A5C4E] leading-relaxed mb-4">
-                  Recuperá piezas dentarias perdidas con máxima firmeza, función masticatoria óptima y estética biocompatible.
-                </p>
-
-                <div className="space-y-2 mb-6 text-xs text-[#524436]">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Implantes de titanio de fijación precisa</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Coronas en porcelana y zirconio libre de metal</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Prótesis dentales fijas y removibles</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Rehabilitación de función y sonrisa completa</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-[#F2EBE1]">
                 <a
-                  href={getWhatsAppUrl('Hola Dra. Trinidad Robledo, quisiera consultar sobre implantes dentales o rehabilitación con prótesis.')}
+                  href={getWhatsAppUrl('Hola Dr. Ray Miranda, quisiera consultar por Implantes Dentales en Ayacucho 1386.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-between text-xs font-semibold text-[#8C6D48] hover:text-[#5E472D]"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#17386D] hover:text-[#0284C7] transition-colors"
                 >
-                  <span>Consultar por implantes</span>
+                  <span>Consultar Implantes</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-            </div>
 
-            {/* Collage 5: Bruxismo & Urgencias */}
-            <div className="rounded-3xl bg-white border border-[#E8DEC\-0] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between p-6 sm:p-7">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#F7F2EB] flex items-center justify-center text-[#B89368] mb-4">
-                  <Zap className="w-6 h-6" />
+              {/* Estética Dental */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-indigo-300 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-[#17386D] uppercase tracking-wider mb-2">Diseño de Sonrisa</div>
+                  <h4 className="text-xl font-editorial font-medium text-slate-900 mb-2">Estética Dental</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-light mb-4">
+                    Tratamientos de alta luminosidad para devolver la juventud y armonía a tu sonrisa con técnicas conservadoras.
+                  </p>
+                  <ul className="space-y-2 text-xs text-slate-700 mb-6">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Carillas ultrafinas de porcelana</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Blanqueamiento clínico en consultorio</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#17386D] shrink-0" />
+                      <span>Cierre de diastemas y contorno gingival</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#8C7A68] mb-1">
-                  Alivio & Terapia
-                </div>
-                <h3 className="text-xl font-editorial font-medium text-[#241D17] mb-2 leading-tight">
-                  Bruxismo & Placas Miorrelajantes
-                </h3>
-                <p className="text-xs text-[#6A5C4E] leading-relaxed mb-4">
-                  Soluciones para el desgaste dentario nocturno, dolor en mandíbula, cefaleas tensionales y urgencias odontológicas.
-                </p>
-
-                <div className="space-y-2 mb-6 text-xs text-[#524436]">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Placas de descanso miorrelajantes a medida</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Protección contra desgaste y fracturas</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Endodoncia (conductos) con anestesia suave</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89368] shrink-0 mt-0.5" />
-                    <span>Atención inmediata ante dolor agudo</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-[#F2EBE1]">
                 <a
-                  href={getWhatsAppUrl('Hola Dra. Trinidad Robledo, sufro de bruxismo / dolor y quisiera consultar por una placa de descanso o atención de urgencia.')}
+                  href={getWhatsAppUrl('Hola Dr. Ray Miranda, quisiera consultar por Estética Dental / Diseño de Sonrisa.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-between text-xs font-semibold text-[#8C6D48] hover:text-[#5E472D]"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#17386D] hover:text-[#0284C7] transition-colors"
                 >
-                  <span>Pedir turno por bruxismo/dolor</span>
+                  <span>Consultar Estética</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-            </div>
 
+            </div>
           </div>
 
         </div>

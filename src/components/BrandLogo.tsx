@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface BrandLogoProps {
-  variant?: 'white' | 'black' | 'default';
+  variant?: 'white' | 'black' | 'default' | 'symbol';
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'hero';
 }
@@ -12,9 +12,14 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   size = 'md'
 }) => {
   const isWhite = variant === 'white';
-  const logoSrc = isWhite 
-    ? '/logos/centro-odontologico-robledo-white.png' 
-    : '/logos/centro-odontologico-robledo-black.png';
+  const isSymbol = variant === 'symbol';
+  
+  let logoSrc = '/logos/md-logo.svg';
+  if (isSymbol) {
+    logoSrc = '/logos/md-symbol.svg';
+  } else if (isWhite) {
+    logoSrc = '/logos/md-logo-white.svg';
+  }
 
   const sizeClasses = {
     sm: 'h-8 sm:h-9 w-auto',
@@ -27,9 +32,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <div className={`inline-flex items-center select-none ${className}`}>
       <img
         src={logoSrc}
-        alt="Centro Odontológico Robledo - Dra. Trinidad Robledo"
+        alt="MD Odontología - Health & Esthetics | Dra. Inés Escuder · Dr. Ray Miranda"
         className={`${sizeClasses[size]} max-w-full object-contain transition-transform duration-300 hover:scale-[1.02]`}
-        style={isWhite ? { filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.15))' } : undefined}
+        style={isWhite ? { filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.25))' } : undefined}
       />
     </div>
   );

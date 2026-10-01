@@ -1,5 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <rect width="100" height="100" rx="24" fill="#F4EDE4"/>
-  <path d="M50 18C41 18 32 25 31 36C30 46 36 58 39 71C40 76 43 82 48 82C52 82 53 74 54 69C55 63 56 57 58 53C61 47 67 43 70 38C73 33 73 26 69 22C64 17 56 18 50 18Z" stroke="#B89368" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M44 32C46 41 51 51 57 57C60 60 62 65 62 70C62 76 60 82 56 82" stroke="#B89368" stroke-width="3.5" stroke-linecap="round"/>
+  <defs>
+    <clipPath id="fav-sq">
+      <rect width="100" height="100" rx="22" fill="#183E75"/>
+    </clipPath>
+    <linearGradient id="favSky" x1="50" y1="50" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4AA8E4"/>
+      <stop offset="100%" stop-color="#3592D0"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#fav-sq)">
+    <rect width="100" height="100" fill="#173B6F"/>
+    <path d="M 0 100 L 100 100 L 100 35 C 90 45, 60 70, 0 100 Z" fill="url(#favSky)"/>
+    <path d="M 15 100 Q 60 75 100 65" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" fill="none"/>
+    <path d="M 40 100 L 80 50" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.8" fill="none"/>
+    <path d="M 0 95 C 30 80, 55 50, 75 10 L 88 18 C 70 55, 45 86, 0 100 Z" fill="#FFFFFF"/>
+    <path d="M 75 10 C 82 22, 88 38, 92 55 C 80 62, 60 74, 35 90 C 50 68, 68 38, 75 10 Z" fill="#75C3F2"/>
+  </g>
 </svg>

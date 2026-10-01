@@ -1,30 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-  --color-beige-50: #FCFAF7;
-  --color-beige-100: #F7F3EB;
-  --color-beige-200: #EFE7DA;
-  --color-beige-300: #E3D5C1;
-  --color-beige-400: #CEBCA3;
-  --color-beige-500: #B7A082;
-  
-  --color-gold-300: #DFCAAA;
-  --color-gold-400: #CBAE87;
-  --color-gold-500: #B89368;
-  --color-gold-600: #9E7951;
+  /* MD Odontología Palette: Deep Navy, Medical Sky & Ivory Warmth */
+  --color-canvas-50: #FCFBF8;
+  --color-canvas-100: #F8FAFC;
+  --color-canvas-200: #F1F5F9;
 
-  --color-bronze-800: #42362C;
-  --color-bronze-900: #2C241E;
-  --color-bronze-950: #1E1814;
+  --color-navy-950: #0A1324;
+  --color-navy-900: #102246;
+  --color-navy-800: #17386D;
+  --color-navy-700: #1E4A8E;
+  --color-navy-600: #2563EB;
+
+  --color-sky-50: #F0F9FF;
+  --color-sky-100: #E0F2FE;
+  --color-sky-400: #38BDF8;
+  --color-sky-500: #0EA5E9;
+  --color-sky-600: #0284C7;
+
+  --color-gold-400: #FBBF24;
+  --color-gold-500: #F59E0B;
 }
 
 @layer base {
   body {
-    background-color: var(--color-beige-50);
-    color: var(--color-bronze-900);
+    background-color: var(--color-canvas-50);
+    color: var(--color-navy-950);
     font-family: var(--font-sans);
   }
 
@@ -33,23 +37,23 @@
   }
 }
 
-/* Custom subtle noise / warmth utilities */
-.bg-warm-sand {
-  background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F5EFE6 50%, #ECE2D4 100%);
+/* Glass and gradient utilities */
+.bg-warm-canvas {
+  background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
 }
 
-.glass-beige {
-  background: rgba(250, 247, 242, 0.85);
+.glass-nav {
+  background: rgba(252, 251, 248, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(227, 213, 193, 0.6);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(239, 231, 218, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 @keyframes marquee {
@@ -60,10 +64,9 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-
